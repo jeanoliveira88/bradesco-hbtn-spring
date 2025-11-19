@@ -36,7 +36,7 @@ public class UsuarioServiceTest {
 
         when(usuarioRepository.findById(id)).thenReturn(Optional.of(usuario));
 
-        Usuario resultado = usuarioService.findById(id);
+        Usuario resultado = usuarioService.buscarUsuarioPorId(id);
 
         assertNotNull(resultado);
         assertEquals(id, resultado.getId());
@@ -51,7 +51,7 @@ public class UsuarioServiceTest {
         Long id = 2L;
         when(usuarioRepository.findById(id)).thenReturn(Optional.empty());
 
-        assertThrows(RuntimeException.class, () -> usuarioService.findById(id));
+        assertThrows(RuntimeException.class, () -> usuarioService.buscarUsuarioPorId(id));
 
         verify(usuarioRepository, times(1)).findById(id);
     }

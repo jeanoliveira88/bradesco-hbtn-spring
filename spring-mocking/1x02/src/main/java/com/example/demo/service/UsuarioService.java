@@ -13,7 +13,7 @@ public class UsuarioService {
         this.repository = repository;
     }
 
-    public Usuario findById(Long id) {
+    public Usuario buscarUsuarioPorId(Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
     }
