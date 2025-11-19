@@ -18,7 +18,7 @@ public class UsuarioService {
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
     }
 
-    public Usuario save(Usuario usuario) {
+    public Usuario salvarUsuario(Usuario usuario) {
         return repository.save(usuario);
     }
 }

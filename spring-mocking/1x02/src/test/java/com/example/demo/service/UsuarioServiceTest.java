@@ -69,7 +69,7 @@ public class UsuarioServiceTest {
 
         when(usuarioRepository.save(paraSalvar)).thenReturn(salvo);
 
-        Usuario resultado = usuarioService.save(paraSalvar);
+        Usuario resultado = usuarioService.salvarUsuario(paraSalvar);
 
         assertNotNull(resultado);
         assertEquals(10L, resultado.getId());
